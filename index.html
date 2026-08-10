@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>VVIP Gaming Room — Захиалга</title>
+  <meta name="description" content="VVIP Gaming Room захиалгын систем" />
+  <meta property="og:title" content="VVIP Gaming Room — Захиалга" />
+  <meta property="og:description" content="Сул өдөр, ээлжээ шалгаад захиалгын хүсэлтээ илгээнэ үү." />
+  <style>
+    :root{color-scheme:dark;--bg:#070a12;--card:#111827;--text:#f8fafc;--muted:#94a3b8;--accent:#2563eb;--accent2:#7c3aed;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#172554 0,#0b1020 34%,#070a12 70%);color:var(--text)}
+    body{min-height:100svh;display:grid;place-items:center;padding:24px}
+    .wrap{width:min(520px,100%)}
+    .card{background:rgba(17,24,39,.9);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.45);backdrop-filter:blur(18px)}
+    .logo{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;margin:0 auto 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:31px;box-shadow:0 12px 35px rgba(37,99,235,.32)}
+    h1{font-size:28px;line-height:1.15;text-align:center;margin:0 0 10px}.lead{text-align:center;color:var(--muted);line-height:1.55;margin:0 0 24px}
+    .primary,.secondary{width:100%;min-height:58px;border:0;border-radius:16px;font-weight:800;font-size:17px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px}
+    .primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;box-shadow:0 12px 30px rgba(37,99,235,.28)}
+    .secondary{margin-top:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text)}
+    .note{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);font-size:14px;line-height:1.55;color:var(--muted)}
+    .note strong{color:var(--text)}
+    .status{min-height:22px;text-align:center;margin-top:14px;font-size:13px;color:#cbd5e1}
+    .tiny{text-align:center;color:#64748b;font-size:12px;margin-top:18px;line-height:1.5}
+    @media (max-width:420px){body{padding:14px}.card{padding:22px;border-radius:22px}h1{font-size:24px}.primary,.secondary{min-height:56px;font-size:16px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="logo">🎮</div>
+      <h1>VVIP Gaming Room</h1>
+      <p class="lead">Захиалгын системийг үндсэн browser дээр нээгээд үргэлжлүүлнэ үү.</p>
+
+      <button id="openBtn" class="primary" type="button">🌐 Захиалгын сайт нээх</button>
+      <a id="normalLink" class="secondary" href="https://script.google.com/macros/s/AKfycbyl6AV0U2wWrYHEQfx8wthMioiJAcL_CKfGx5ODTrddIC28vwRVrikkiS5F5_Du07IX/exec" target="_blank" rel="noopener">↗️ Энгийнээр нээх</a>
+      <button id="copyBtn" class="secondary" type="button">🔗 Холбоос хуулах</button>
+
+      <div id="help" class="note" hidden></div>
+      <div id="status" class="status"></div>
+      <div class="tiny">VVIP Gaming Room · Захиалгын албан ёсны холбоос</div>
+    </section>
+  </main>
+
+<script>
+(() => {
+  const TARGET = 'https://script.google.com/macros/s/AKfycbyl6AV0U2wWrYHEQfx8wthMioiJAcL_CKfGx5ODTrddIC28vwRVrikkiS5F5_Du07IX/exec';
+  const ua = navigator.userAgent || '';
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const isFB = /FBAN|FBAV|FB_IAB|FBIOS|FB4A|Messenger/i.test(ua);
+  const isInstagram = /Instagram/i.test(ua);
+  const inApp = isFB || isInstagram;
+  const help = document.getElementById('help');
+  const status = document.getElementById('status');
+
+  if (inApp && isIOS) {
+    help.hidden = false;
+    help.innerHTML = '<strong>iPhone / iPad:</strong> Facebook эсвэл Instagram дотор Safari-г автоматаар хүчээр нээхийг iOS зөвшөөрдөггүй. Дээд/доод талын <strong>⋯</strong> цэсийг дарж <strong>Open in Safari</strong> эсвэл <strong>Open in browser</strong>-ийг сонгоорой.';
+  } else if (inApp && isAndroid) {
+    help.hidden = false;
+    help.innerHTML = '<strong>Android:</strong> Доорх том товч Chrome-г нээхийг оролдоно. Хэрэв Facebook дотор үлдвэл <strong>⋮ → Open in browser</strong> сонгоорой.';
+  }
+
+  document.getElementById('openBtn').addEventListener('click', () => {
+    status.textContent = 'Сайт нээж байна…';
+    if (isAndroid) {
+      const noScheme = TARGET.replace(/^https:\/\//, '');
+      const intent = 'intent://' + noScheme + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(TARGET) + ';end';
+      window.location.href = intent;
+      setTimeout(() => { window.location.href = TARGET; }, 1400);
+      return;
+    }
+
+    if (isIOS && inApp) {
+      window.open(TARGET, '_blank', 'noopener');
+      setTimeout(() => { status.textContent = 'Safari нээгдэхгүй бол ⋯ → Open in Safari сонгоно уу.'; }, 900);
+      return;
+    }
+
+    window.location.href = TARGET;
+  });
+
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(TARGET);
+      status.textContent = 'Холбоос хууллаа.';
+    } catch (e) {
+      const input = document.createElement('textarea');
+      input.value = TARGET; document.body.appendChild(input); input.select();
+      document.execCommand('copy'); input.remove();
+      status.textContent = 'Холбоос хууллаа.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
