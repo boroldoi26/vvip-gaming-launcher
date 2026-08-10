@@ -1,98 +1,82 @@
 <!doctype html>
 <html lang="mn">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0b1020" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#070a12">
   <title>VVIP Gaming Room — Захиалга</title>
-  <meta name="description" content="VVIP Gaming Room захиалгын систем" />
-  <meta property="og:title" content="VVIP Gaming Room — Захиалга" />
-  <meta property="og:description" content="Сул өдөр, ээлжээ шалгаад захиалгын хүсэлтээ илгээнэ үү." />
+  <meta name="description" content="VVIP Gaming Room-ийн сул өдөр, ээлжийг шалгаж шууд захиалгын хүсэлт илгээнэ үү.">
+  <meta property="og:title" content="VVIP Gaming Room — Захиалга">
+  <meta property="og:description" content="Сул өдөр, ээлжээ шалгаад захиалгын хүсэлтээ илгээнэ үү.">
+  <meta property="og:type" content="website">
   <style>
-    :root{color-scheme:dark;--bg:#070a12;--card:#111827;--text:#f8fafc;--muted:#94a3b8;--accent:#2563eb;--accent2:#7c3aed;--line:rgba(255,255,255,.1)}
-    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#172554 0,#0b1020 34%,#070a12 70%);color:var(--text)}
-    body{min-height:100svh;display:grid;place-items:center;padding:24px}
-    .wrap{width:min(520px,100%)}
-    .card{background:rgba(17,24,39,.9);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.45);backdrop-filter:blur(18px)}
-    .logo{width:68px;height:68px;border-radius:20px;display:grid;place-items:center;margin:0 auto 18px;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:31px;box-shadow:0 12px 35px rgba(37,99,235,.32)}
-    h1{font-size:28px;line-height:1.15;text-align:center;margin:0 0 10px}.lead{text-align:center;color:var(--muted);line-height:1.55;margin:0 0 24px}
-    .primary,.secondary{width:100%;min-height:58px;border:0;border-radius:16px;font-weight:800;font-size:17px;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px}
-    .primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;box-shadow:0 12px 30px rgba(37,99,235,.28)}
-    .secondary{margin-top:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--text)}
-    .note{margin-top:20px;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);font-size:14px;line-height:1.55;color:var(--muted)}
-    .note strong{color:var(--text)}
-    .status{min-height:22px;text-align:center;margin-top:14px;font-size:13px;color:#cbd5e1}
-    .tiny{text-align:center;color:#64748b;font-size:12px;margin-top:18px;line-height:1.5}
-    @media (max-width:420px){body{padding:14px}.card{padding:22px;border-radius:22px}h1{font-size:24px}.primary,.secondary{min-height:56px;font-size:16px}}
+    :root{--bg:#070a12;--card:#101725;--card2:#151f31;--text:#f8fafc;--muted:#93a4bb;--line:rgba(255,255,255,.1);--blue:#3b82f6;--violet:#8b5cf6;--green:#22c55e;--amber:#f59e0b;--red:#ef4444;--shadow:0 22px 70px rgba(0,0,0,.35)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 0,#172554 0,#0b1020 30%,var(--bg) 68%);color:var(--text);min-height:100vh}a{color:inherit}.shell{width:min(1100px,100%);margin:auto;padding:18px 16px 100px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 18px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--violet));font-size:23px;box-shadow:0 10px 30px rgba(59,130,246,.25)}.brand b{display:block;font-size:16px}.brand small{color:var(--muted)}.top a{font-size:13px;text-decoration:none;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04)}
+    .hero{padding:28px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,rgba(30,41,59,.94),rgba(15,23,42,.9));box-shadow:var(--shadow);display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:center}.hero h1{font-size:clamp(34px,6vw,60px);line-height:.98;margin:0 0 14px;letter-spacing:-.04em}.hero p{margin:0;color:var(--muted);line-height:1.6;max-width:650px}.price{border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.045);padding:22px}.price small{color:var(--muted);display:block}.price strong{display:block;font-size:34px;margin:7px 0}.price span{font-size:13px;color:#cbd5e1}
+    .section{margin-top:18px;border:1px solid var(--line);border-radius:24px;background:rgba(16,23,37,.92);padding:20px;box-shadow:0 8px 28px rgba(0,0,0,.18)}.section h2{margin:0 0 6px;font-size:22px}.sub{color:var(--muted);font-size:14px;margin-bottom:16px;line-height:1.5}.monthbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.monthbar button{border:1px solid var(--line);background:var(--card2);color:#fff;border-radius:12px;padding:10px 13px;font-weight:800;cursor:pointer}.monthTitle{font-weight:900}.week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.week div{text-align:center;color:#64748b;font-size:11px;font-weight:800;padding:6px 0}.day{min-height:72px;border:1px solid var(--line);border-radius:14px;background:#0d1421;color:#fff;padding:8px;cursor:pointer;text-align:left;position:relative}.day:hover{border-color:#49627f}.day.empty{visibility:hidden}.day.past{opacity:.4;cursor:not-allowed}.day.selected{outline:2px solid var(--blue);background:#111f36}.num{font-weight:900}.dots{display:flex;gap:4px;position:absolute;left:8px;bottom:8px}.dot{width:7px;height:7px;border-radius:50%;background:#475569}.dot.free{background:var(--green)}.dot.pending{background:var(--amber)}.dot.busy{background:var(--red)}.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:12px}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+    .shiftBox{margin-top:16px;display:none}.shiftBox.show{display:block}.shiftTitle{font-weight:900;margin-bottom:10px}.shifts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.shift{border:1px solid var(--line);border-radius:16px;background:#0d1421;padding:14px;cursor:pointer}.shift b{display:block}.shift small{color:var(--muted)}.shift.free{border-color:rgba(34,197,94,.45)}.shift.selected{outline:2px solid var(--green);background:#0f2018}.shift[disabled]{opacity:.45;cursor:not-allowed}.statusBadge{display:inline-block;margin-top:8px;padding:5px 8px;border-radius:999px;font-size:11px;font-weight:900;background:#1e293b}.shift.free .statusBadge{background:rgba(34,197,94,.14);color:#86efac}.shift.pending .statusBadge{background:rgba(245,158,11,.14);color:#fcd34d}.shift.busy .statusBadge{background:rgba(239,68,68,.14);color:#fca5a5}
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800;color:#cbd5e1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:13px;background:#0b1220;color:#fff;padding:13px 14px;font:inherit;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.12)}.field textarea{min-height:92px;resize:vertical}.hint{font-size:11px;color:#64748b}.submit{grid-column:1/-1;border:0;border-radius:15px;min-height:56px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;font-weight:900;font-size:16px;cursor:pointer}.submit:disabled{opacity:.55;cursor:wait}.message{grid-column:1/-1;display:none;border-radius:14px;padding:13px 14px;font-size:13px;line-height:1.5}.message.show{display:block}.message.ok{background:rgba(34,197,94,.13);border:1px solid rgba(34,197,94,.3);color:#bbf7d0}.message.err{background:rgba(239,68,68,.13);border:1px solid rgba(239,68,68,.3);color:#fecaca}
+    .infoGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info{border:1px solid var(--line);border-radius:16px;padding:15px;background:#0d1421}.info b{display:block;margin-bottom:7px}.info p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}.map{width:100%;height:300px;border:0;border-radius:18px;margin-top:14px}.mapBtns{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.mapBtns a{padding:11px 13px;border-radius:12px;background:#172033;border:1px solid var(--line);text-decoration:none;font-weight:800;font-size:13px}.loading{color:var(--muted);font-size:13px;padding:10px 0}.bottom{display:none}
+    @media(max-width:760px){.shell{padding:12px 10px 92px}.hero{grid-template-columns:1fr;padding:20px;border-radius:22px}.price strong{font-size:30px}.section{padding:15px;border-radius:20px}.calendar,.week{gap:4px}.day{min-height:58px;border-radius:11px;padding:6px}.num{font-size:13px}.dots{left:6px;bottom:6px}.dot{width:6px;height:6px}.form,.infoGrid{grid-template-columns:1fr}.field.full,.submit,.message{grid-column:auto}.top a{display:none}.shifts{grid-template-columns:1fr}.map{height:250px}.bottom{position:fixed;display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:50;background:rgba(10,15,26,.92);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:18px;padding:8px;box-shadow:0 16px 45px rgba(0,0,0,.35)}.bottom a{display:grid;place-items:center;text-decoration:none;font-size:12px;color:#cbd5e1;border-radius:12px;min-height:48px}.bottom .book{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;font-weight:900}}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <div class="logo">🎮</div>
-      <h1>VVIP Gaming Room</h1>
-      <p class="lead">Захиалгын системийг үндсэн browser дээр нээгээд үргэлжлүүлнэ үү.</p>
+<div class="shell">
+  <header class="top"><div class="brand"><div class="logo">🎮</div><div><b>VVIP Gaming Room</b><small>Private gaming experience</small></div></div><a href="#booking">Захиалах</a></header>
+  <section class="hero"><div><h1>Таны private gaming room.</h1><p>Өдөр, ээлжийн сул цагийг шууд шалгаад захиалгын хүсэлтээ илгээнэ үү. Facebook, Messenger, Instagram дотроос ч энэ хуудас шууд ажиллана.</p></div><div class="price"><small>Нэг ээлжийн үнэ</small><strong id="price">—</strong><span id="shiftSummary">Өдрийн болон шөнийн ээлж</span></div></section>
 
-      <button id="openBtn" class="primary" type="button">🌐 Захиалгын сайт нээх</button>
-      <a id="normalLink" class="secondary" href="https://script.google.com/macros/s/AKfycbyl6AV0U2wWrYHEQfx8wthMioiJAcL_CKfGx5ODTrddIC28vwRVrikkiS5F5_Du07IX/exec" target="_blank" rel="noopener">↗️ Энгийнээр нээх</a>
-      <button id="copyBtn" class="secondary" type="button">🔗 Холбоос хуулах</button>
+  <section class="section" id="calendarSection"><h2>Сул өдөр сонгох</h2><div class="sub">Ногоон = сул, шар = хүлээгдэж буй, улаан = захиалгатай.</div><div class="monthbar"><button id="prevMonth">←</button><div class="monthTitle" id="monthTitle"></div><button id="nextMonth">→</button></div><div class="week"><div>Да</div><div>Мя</div><div>Лх</div><div>Пү</div><div>Ба</div><div>Бя</div><div>Ня</div></div><div class="calendar" id="calendar"></div><div class="legend"><span><i style="background:#22c55e"></i>Сул</span><span><i style="background:#f59e0b"></i>Хүлээгдэж буй</span><span><i style="background:#ef4444"></i>Захиалгатай</span></div><div class="shiftBox" id="shiftBox"><div class="shiftTitle" id="selectedDateText"></div><div class="shifts" id="shifts"></div></div><div class="loading" id="calendarLoading">Календарь ачаалж байна…</div></section>
 
-      <div id="help" class="note" hidden></div>
-      <div id="status" class="status"></div>
-      <div class="tiny">VVIP Gaming Room · Захиалгын албан ёсны холбоос</div>
-    </section>
-  </main>
+  <section class="section" id="booking"><h2>Захиалгын хүсэлт</h2><div class="sub">Өдөр, ээлжээ дээрээс сонгоод мэдээллээ бөглөнө үү. И-мэйл заавал биш.</div><form class="form" id="bookingForm"><div class="field"><label>Нэр *</label><input id="name" autocomplete="name" required></div><div class="field"><label>Утас *</label><input id="phone" inputmode="numeric" autocomplete="tel" maxlength="8" placeholder="8 оронтой" required></div><div class="field"><label>И-мэйл</label><input id="email" type="email" autocomplete="email" placeholder="Санамж, баталгаажуулалт авах бол"></div><div class="field"><label>Хүний тоо</label><input id="guestCount" inputmode="numeric" placeholder="Жишээ: 6"></div><div class="field"><label>Сонгосон өдөр *</label><input id="date" readonly required placeholder="Календараас сонгоно уу"></div><div class="field"><label>Ээлж *</label><select id="shift" required><option value="">Ээлж сонгоно уу</option></select></div><div class="field full"><label>Нэмэлт хүсэлт</label><textarea id="note" placeholder="Тоглоом, төрсөн өдөр, тусгай хүсэлт гэх мэт"></textarea><div class="hint">Захиалга шууд баталгаажихгүй. Админ утсаар холбогдон баталгаажуулна.</div></div><button class="submit" id="submitBtn" type="submit">Захиалгын хүсэлт илгээх</button><div class="message" id="message"></div></form></section>
 
+  <section class="section" id="location"><h2>Байршил</h2><div class="infoGrid"><div class="info"><b>📍 Хаяг</b><p id="address">ХУД 23-р хороо, Мандала Гарден хотхон, Мандала Плаза, 2 давхар, 19 тоот.</p></div><div class="info"><b>🕹️ Ээлж</b><p>Өдрийн ээлж 10:00–21:00<br>Шөнийн ээлж 22:00–09:00</p></div></div><iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=47.863334,106.8348677&z=17&output=embed"></iframe><div class="mapBtns"><a href="https://www.google.com/maps/search/?api=1&query=47.863334,106.8348677" target="_blank" rel="noopener">Google Maps нээх</a><a href="https://www.google.com/maps/dir/?api=1&destination=47.863334,106.8348677" target="_blank" rel="noopener">Чиглэл авах</a></div></section>
+</div>
+<nav class="bottom"><a href="#calendarSection">📅<br>Календарь</a><a class="book" href="#booking">🎮 Захиалах</a><a href="#location">📍<br>Байршил</a></nav>
+<script src="assets/config.js"></script>
 <script>
 (() => {
-  const TARGET = 'https://script.google.com/macros/s/AKfycbyl6AV0U2wWrYHEQfx8wthMioiJAcL_CKfGx5ODTrddIC28vwRVrikkiS5F5_Du07IX/exec';
-  const ua = navigator.userAgent || '';
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
-  const isFB = /FBAN|FBAV|FB_IAB|FBIOS|FB4A|Messenger/i.test(ua);
-  const isInstagram = /Instagram/i.test(ua);
-  const inApp = isFB || isInstagram;
-  const help = document.getElementById('help');
-  const status = document.getElementById('status');
+  const API = window.VVIP_API_URL;
+  const $ = id => document.getElementById(id);
+  const state = { config:null, month:new Date(), availability:{}, selectedDate:'', selectedShift:'' };
+  state.month.setDate(1); state.month.setHours(0,0,0,0);
 
-  if (inApp && isIOS) {
-    help.hidden = false;
-    help.innerHTML = '<strong>iPhone / iPad:</strong> Facebook эсвэл Instagram дотор Safari-г автоматаар хүчээр нээхийг iOS зөвшөөрдөггүй. Дээд/доод талын <strong>⋯</strong> цэсийг дарж <strong>Open in Safari</strong> эсвэл <strong>Open in browser</strong>-ийг сонгоорой.';
-  } else if (inApp && isAndroid) {
-    help.hidden = false;
-    help.innerHTML = '<strong>Android:</strong> Доорх том товч Chrome-г нээхийг оролдоно. Хэрэв Facebook дотор үлдвэл <strong>⋮ → Open in browser</strong> сонгоорой.';
+  function jsonp(action, params={}) {
+    return new Promise((resolve,reject) => {
+      if (!API || API.includes('PASTE_')) return reject(new Error('API URL тохируулаагүй байна.'));
+      const cb='__vvip_cb_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+      const q=new URLSearchParams({...params,action,callback:cb,_:Date.now()});
+      const s=document.createElement('script');
+      const timer=setTimeout(()=>cleanup(new Error('Server хариу өгөхгүй байна.')),15000);
+      function cleanup(err,val){clearTimeout(timer);delete window[cb];s.remove();err?reject(err):resolve(val)}
+      window[cb]=payload=>payload&&payload.ok?cleanup(null,payload.data):cleanup(new Error((payload&&payload.error)||'Үйлдэл амжилтгүй'));
+      s.onerror=()=>cleanup(new Error('Server-тэй холбогдож чадсангүй.'));
+      s.src=API+(API.includes('?')?'&':'?')+q.toString(); document.head.appendChild(s);
+    });
   }
+  function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+  function money(n){return new Intl.NumberFormat('en-US').format(Number(n||0))+'₮'}
+  function monthName(d){return new Intl.DateTimeFormat('mn-MN',{year:'numeric',month:'long'}).format(d)}
+  function statusClass(s){if(s==='AVAILABLE')return'free';if(s==='PENDING')return'pending';if(s==='CONFIRMED')return'busy';return''}
+  function statusText(x){if(x.past)return'Өнгөрсөн';if(x.available)return'Сул';if(x.bookingStatus==='PENDING')return'Хүлээгдэж буй';if(x.bookingStatus==='CONFIRMED')return'Захиалгатай';return'Боломжгүй'}
 
-  document.getElementById('openBtn').addEventListener('click', () => {
-    status.textContent = 'Сайт нээж байна…';
-    if (isAndroid) {
-      const noScheme = TARGET.replace(/^https:\/\//, '');
-      const intent = 'intent://' + noScheme + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(TARGET) + ';end';
-      window.location.href = intent;
-      setTimeout(() => { window.location.href = TARGET; }, 1400);
-      return;
-    }
-
-    if (isIOS && inApp) {
-      window.open(TARGET, '_blank', 'noopener');
-      setTimeout(() => { status.textContent = 'Safari нээгдэхгүй бол ⋯ → Open in Safari сонгоно уу.'; }, 900);
-      return;
-    }
-
-    window.location.href = TARGET;
-  });
-
-  document.getElementById('copyBtn').addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(TARGET);
-      status.textContent = 'Холбоос хууллаа.';
-    } catch (e) {
-      const input = document.createElement('textarea');
-      input.value = TARGET; document.body.appendChild(input); input.select();
-      document.execCommand('copy'); input.remove();
-      status.textContent = 'Холбоос хууллаа.';
-    }
-  });
+  async function loadConfig(){const c=await jsonp('config');state.config=c;$('price').textContent=money(c.price);$('address').textContent=c.address||$('address').textContent;$('shift').innerHTML='<option value="">Ээлж сонгоно уу</option>'+c.shifts.map(s=>`<option value="${s.value}">${s.label} · ${s.time}</option>`).join('');$('shiftSummary').textContent=c.shifts.map(s=>s.time).join(' · ')}
+  async function loadMonth(){
+    $('calendarLoading').style.display='block'; $('monthTitle').textContent=monthName(state.month);
+    const start=new Date(state.month), end=new Date(state.month.getFullYear(),state.month.getMonth()+1,0);
+    try{const rows=await jsonp('availability',{start:ymd(start),end:ymd(end)});state.availability={};rows.forEach(r=>state.availability[r.date]=r);renderCalendar()}catch(e){$('calendar').innerHTML=`<div style="grid-column:1/-1;color:#fecaca;padding:14px">${e.message}</div>`}finally{$('calendarLoading').style.display='none'}
+  }
+  function renderCalendar(){
+    const first=new Date(state.month), days=new Date(first.getFullYear(),first.getMonth()+1,0).getDate(); let weekday=first.getDay();weekday=weekday===0?6:weekday-1;let html='';for(let i=0;i<weekday;i++)html+='<div class="day empty"></div>';
+    for(let d=1;d<=days;d++){const date=new Date(first.getFullYear(),first.getMonth(),d), key=ymd(date), info=state.availability[key], cls=['day'];if(info&&info.status==='PAST')cls.push('past');if(key===state.selectedDate)cls.push('selected');const dots=info?Object.values(info.shifts).map(s=>`<i class="dot ${s.available?'free':s.bookingStatus==='PENDING'?'pending':s.bookingStatus==='CONFIRMED'?'busy':''}"></i>`).join(''):'';html+=`<button type="button" class="${cls.join(' ')}" data-date="${key}" ${info&&info.status==='PAST'?'disabled':''}><span class="num">${d}</span><span class="dots">${dots}</span></button>`}
+    $('calendar').innerHTML=html;$('calendar').querySelectorAll('[data-date]').forEach(b=>b.addEventListener('click',()=>selectDate(b.dataset.date)));
+  }
+  function selectDate(key){const info=state.availability[key];if(!info)return;state.selectedDate=key;state.selectedShift='';$('date').value=key;$('shift').value='';renderCalendar();$('selectedDateText').textContent=key+' — ээлж сонгоно уу';$('shiftBox').classList.add('show');$('shifts').innerHTML=Object.entries(info.shifts).map(([k,s])=>`<button type="button" class="shift ${statusClass(s.bookingStatus)} ${s.available?'free':''}" data-shift="${k}" ${!s.available?'disabled':''}><b>${state.config.shifts.find(x=>x.value===k)?.label||k}</b><small>${state.config.shifts.find(x=>x.value===k)?.time||''}</small><span class="statusBadge">${statusText(s)}</span></button>`).join('');$('shifts').querySelectorAll('[data-shift]').forEach(b=>b.addEventListener('click',()=>selectShift(b.dataset.shift)));$('booking').scrollIntoView({behavior:'smooth',block:'start'})}
+  function selectShift(k){state.selectedShift=k;$('shift').value=k;$('shifts').querySelectorAll('.shift').forEach(b=>b.classList.toggle('selected',b.dataset.shift===k))}
+  $('shift').addEventListener('change',e=>{state.selectedShift=e.target.value;if($('shiftBox').classList.contains('show'))$('shifts').querySelectorAll('.shift').forEach(b=>b.classList.toggle('selected',b.dataset.shift===state.selectedShift))});
+  $('prevMonth').addEventListener('click',()=>{const now=new Date();now.setDate(1);now.setHours(0,0,0,0);const prev=new Date(state.month.getFullYear(),state.month.getMonth()-1,1);if(prev<now)return;state.month=prev;state.selectedDate='';loadMonth()});
+  $('nextMonth').addEventListener('click',()=>{state.month=new Date(state.month.getFullYear(),state.month.getMonth()+1,1);state.selectedDate='';loadMonth()});
+  $('bookingForm').addEventListener('submit',async e=>{e.preventDefault();const msg=$('message'),btn=$('submitBtn');msg.className='message';msg.textContent='';if(!$('date').value||!$('shift').value){msg.className='message show err';msg.textContent='Календараас өдөр болон сул ээлж сонгоно уу.';return}btn.disabled=true;btn.textContent='Илгээж байна…';try{const r=await jsonp('book',{name:$('name').value.trim(),phone:$('phone').value.trim(),email:$('email').value.trim(),guestCount:$('guestCount').value.trim(),date:$('date').value,shift:$('shift').value,note:$('note').value.trim()});msg.className='message show ok';msg.innerHTML=`Хүсэлт амжилттай илгээгдлээ. <b>Захиалгын дугаар: ${r.bookingId}</b><br>${r.date} · ${r.shift} · ${r.time}<br>Манай ажилтан утсаар холбогдон баталгаажуулна.`;$('bookingForm').reset();state.selectedDate='';state.selectedShift='';$('shiftBox').classList.remove('show');await loadMonth()}catch(err){msg.className='message show err';msg.textContent=err.message}finally{btn.disabled=false;btn.textContent='Захиалгын хүсэлт илгээх'}});
+  Promise.all([loadConfig()]).then(loadMonth).catch(e=>{$('calendarLoading').textContent='Тохиргооны алдаа: '+e.message});
 })();
 </script>
 </body>
